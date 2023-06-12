@@ -1,4 +1,6 @@
 node_modules/
 dist/
 .cache/
-.vercel
+.vercel/
+.DS_Store
+.task.md
