@@ -2,10 +2,10 @@
   "name": "todo-list",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "start": "parcel index.html --open",
-    "build": "parcel build index.html --out-dir=build",
+    "start": "tsc --watch",
+    "build": "parcel build public/index.html --out-dir=build",
     "predeploy": "npm run build",
     "deploy": "vercel --prod"
   },
@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.5",
+    "typescript": "^5.2.2",
     "vercel": "^30.2.1"
   }
 }

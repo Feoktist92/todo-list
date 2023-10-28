@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-size: 1.2rem;
+}
+header {
+    background-color: mediumorchid;
+    color: white;
+    height: 100px;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+form {
+    width: 500px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+form input,
+form select {
+    padding: 0.5rem 1rem;
+}
+input[type='text'] {
+    width: 100%;
+}
+input[type='text']:focus {
+    outline: none;
+    border: 2px solid mediumorchid;
+    border-radius: 3px;
+}
+form select {
+    cursor: pointer;
+    outline: none;
+}
+form select:focus {
+    border: 1px solid mediumorchid;
+    border-radius: 3px;
+}
+form > button {
+    cursor: pointer;
+    background-color: mediumorchid;
+    color: white;
+    border: none;
+    padding: 0.5rem 0.8rem;
+    transition: all 0.3s ease;
+}
+form > button:hover {
+    background-color: violet;
+}
+
+ul {
+    list-style: none;
+    width: 500px;
+    margin: 2rem auto;
+    padding: 0;
+}
+
+.todo-item {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    align-items: center;
+}
+.todo-item > input[type='checkbox'] {
+    flex-shrink: 0;
+    width: 1.2rem !important;
+    height: 1.2rem !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.todo-item > input[type='checkbox']:hover {
+    transform: scale(1.2);
+}
+
+.close {
+    color: red;
+    cursor: pointer;
+    font-weight: bolder;
+    margin-left: auto;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+.close:hover {
+    transform: scale(1.2);
+}
+
+/* Анимация для выхода задачи (slide-out) */
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+/* Анимация для входа задачи (slide-in) */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.todo-item {
+    animation-duration: 0.4s;
+}
+
+/* Задачи, добавляемые с анимацией входа */
+.todo-item.slide-in {
+    animation-name: slideIn;
+}
+
+/* Задачи, удаляемые с анимацией выхода */
+.todo-item.slide-out {
+    animation-name: slideOut;
+}
